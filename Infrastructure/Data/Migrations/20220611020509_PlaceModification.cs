@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infrastructure.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class PlaceModification : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -50,43 +50,43 @@ namespace Infrastructure.Data.Migrations
                 {
                     IdPlace = table.Column<int>(type: "int", maxLength: 3, nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
+                    Name = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
                     ApproximateExpenses = table.Column<decimal>(type: "decimal(6,2)", nullable: false),
-                    Description = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: true)
+                    Description = table.Column<string>(type: "varchar(300)", maxLength: 300, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    ImageUrl = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: true)
+                    ImageUrl = table.Column<string>(type: "varchar(150)", maxLength: 150, nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    Idcountry = table.Column<int>(type: "int", nullable: false),
-                    Idcategory = table.Column<int>(type: "int", nullable: false),
-                    CategoryNavigationIdCategory = table.Column<int>(type: "int", nullable: true),
-                    CountryNavigationIdCountry = table.Column<int>(type: "int", nullable: true)
+                    IdCountry = table.Column<int>(type: "int", nullable: false),
+                    IdCategory = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Places", x => x.IdPlace);
                     table.ForeignKey(
-                        name: "FK_Places_Categories_CategoryNavigationIdCategory",
-                        column: x => x.CategoryNavigationIdCategory,
+                        name: "FK_Places_Categories_IdCategory",
+                        column: x => x.IdCategory,
                         principalTable: "Categories",
-                        principalColumn: "IdCategory");
+                        principalColumn: "IdCategory",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Places_Countries_CountryNavigationIdCountry",
-                        column: x => x.CountryNavigationIdCountry,
+                        name: "FK_Places_Countries_IdCountry",
+                        column: x => x.IdCountry,
                         principalTable: "Countries",
-                        principalColumn: "IdCountry");
+                        principalColumn: "IdCountry",
+                        onDelete: ReferentialAction.Cascade);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Places_CategoryNavigationIdCategory",
+                name: "IX_Places_IdCategory",
                 table: "Places",
-                column: "CategoryNavigationIdCategory");
+                column: "IdCategory");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Places_CountryNavigationIdCountry",
+                name: "IX_Places_IdCountry",
                 table: "Places",
-                column: "CountryNavigationIdCountry");
+                column: "IdCountry");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

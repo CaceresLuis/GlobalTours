@@ -1,0 +1,18 @@
+[
+
+  {
+    "idCategory": 1,
+    "name": "Ultra",
+    "state": 1
+  },
+  {
+    "idCategory": 2,
+    "name": "Medium",
+    "state": 1
+  },
+  {
+    "idCategory": 3,
+    "name": "Basic",
+    "state": 1
+  }
+]

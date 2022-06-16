@@ -1,0 +1,38 @@
+[
+  {
+    "idPlace": 1,
+    "name": "Palace",
+    "approximateExpenses": 25.5,
+    "description": "Nice place",
+    "imageUrl": null,
+    "idCountry": 1,
+    "idCategory": 1
+  },
+  {
+    "idPlace": 2,
+    "name": "Carilo",
+    "approximateExpenses": 15.5,
+    "description": "Nice place",
+    "imageUrl": null,
+    "idCountry": 2,
+    "idCategory": 1
+  },
+  {
+    "idPlace": 1,
+    "name": "Roquitos",
+    "approximateExpenses": 30.5,
+    "description": "Nice place",
+    "imageUrl": null,
+    "idCountry": 3,
+    "idCategory": 2
+  },
+  {
+    "idPlace": 1,
+    "name": "Volantis",
+    "approximateExpenses": 12.5,
+    "description": "Nice place",
+    "imageUrl": null,
+    "idCountry": 4,
+    "idCategory": 2
+  }
+]

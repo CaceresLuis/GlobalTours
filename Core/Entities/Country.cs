@@ -10,7 +10,6 @@ namespace Core.Entities
         [MaxLength(100)]
         public string Name { get; set; }
         public bool State { get; set; }
-
         public ICollection<Place> Places { get; set; }
     }
 }

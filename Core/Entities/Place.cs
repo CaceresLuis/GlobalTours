@@ -16,10 +16,11 @@ namespace Core.Entities
         public string Description { get; set; }
         [MaxLength(150)]
         public string ImageUrl { get; set; }
-        public int Idcountry { get; set; }
-        public int Idcategory { get; set; }
-
-        public Category CategoryNavigation { get; set; }
-        public Country CountryNavigation { get; set; }
+        public int IdCountry { get; set; }
+        public int IdCategory { get; set; }
+        [ForeignKey("IdCategory")]
+        public Category Category { get; set; }
+        [ForeignKey("IdCountry")]
+        public Country Country { get; set; }
     }
 }

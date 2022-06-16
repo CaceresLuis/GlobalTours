@@ -1,0 +1,27 @@
+[
+  {
+    "idCountry": 1,
+    "name": "El Salvador",
+    "state": 1
+  },
+  {
+    "idCountry": 2,
+    "name": "Belgica",
+    "state": 1
+  },
+  {
+    "idCountry": 3,
+    "name": "Panama",
+    "state": 1
+  },
+  {
+    "idCountry": 4,
+    "name": "Burgers",
+    "state": 1
+  },
+  {
+    "idCountry": 5,
+    "name": "Burg",
+    "state": 1
+  }
+]
